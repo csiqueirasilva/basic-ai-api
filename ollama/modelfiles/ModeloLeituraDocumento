@@ -1,0 +1,10 @@
+FROM llama3
+
+# sets the temperature to 1 [higher is more creative, lower is more coherent]
+PARAMETER temperature 0.8
+
+# sets the context window size to 8000, this controls how many tokens the LLM can use as context to generate the next token
+PARAMETER num_ctx 8000
+
+# sets a custom system message to specify the behavior of the chat assistant
+SYSTEM Você irá responder apenas perguntas sobre o contexto informado. Todas as suas respostas são em português brasileiro. Perguntas sobre provas devem ser respondidas sobre o vestibular da PUC-Rio. A palavra cair é sinônimo de o que consta em uma prova ou disciplina.

@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  ollama:
+    build: 
+      context: ./ollama
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - /opt/ollama:/root/.ollama
+      - /opt/ollama-models:/usr/share/ollama/.ollama/models
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+              count: all
+    restart: unless-stopped
+
+  flaskapp:
+    build:
+      context: ./flask
+    container_name: flaskapp
+    volumes:
+      - /opt/flaskapp-chroma:/app/chroma
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    depends_on:
+      - ollama

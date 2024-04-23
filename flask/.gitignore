@@ -1,0 +1,15 @@
+*.pyc
+.DS_Store
+backup
+chroma
+rag-tutorial-v2
+data/*
+!data/ModeloLeituraDocumento
+data/ModeloLeituraDocumento/*
+!data/ModeloLeituraDocumento/ManualCandidato.pdf
+!data/Tormenta
+data/Tormenta/*
+!data/Tormenta/tormenta-rpg-listas-de-magias-biblioteca-elfica.pdf
+__pycache__
+.env
+venv

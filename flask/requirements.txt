@@ -1,0 +1,8 @@
+pypdf
+langchain
+chromadb # Vector storage
+pytest
+Flask
+python-dotenv
+tiktoken
+langchain-openai
