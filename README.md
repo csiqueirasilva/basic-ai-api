@@ -105,3 +105,7 @@ the project is structured in this way:
 
 - ollama creates and uses models that are defined within modelfiles in ```ollama/modelfiles```
 - if your model uses embeddings, you need to define a directory with the PDF files in ```flask/data/<modelname>```, matching the exact modelname of the modelfile in ollama directory. *text files we're not tested for generating embeddings, its possible that further modifications need to be done in code*
+
+# takeaway
+
+the local model and the local embeddings themselves arent quite there yet, but using openai (at costs) seems reasonable. This template will be good when new models are released, so it will be easy to try them out.
